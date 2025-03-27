@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Commission extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that should be cast to native types.
@@ -17,10 +20,10 @@ class Commission extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'payment_id' => 'integer',
+        'id'            => 'integer',
+        'payment_id'    => 'integer',
         'instructor_id' => 'integer',
-        'paid_at' => 'timestamp',
+        'paid_at'       => 'timestamp',
     ];
 
     public function payment(): BelongsTo

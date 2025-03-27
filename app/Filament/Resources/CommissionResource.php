@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CommissionResource\Pages;
-use App\Filament\Resources\CommissionResource\RelationManagers;
 use App\Models\Commission;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -98,9 +99,9 @@ class CommissionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCommissions::route('/'),
+            'index'  => Pages\ListCommissions::route('/'),
             'create' => Pages\CreateCommission::route('/create'),
-            'edit' => Pages\EditCommission::route('/{record}/edit'),
+            'edit'   => Pages\EditCommission::route('/{record}/edit'),
         ];
     }
 

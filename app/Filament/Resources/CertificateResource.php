@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CertificateResource\Pages;
-use App\Filament\Resources\CertificateResource\RelationManagers;
 use App\Models\Certificate;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -85,9 +86,9 @@ class CertificateResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCertificates::route('/'),
+            'index'  => Pages\ListCertificates::route('/'),
             'create' => Pages\CreateCertificate::route('/create'),
-            'edit' => Pages\EditCertificate::route('/{record}/edit'),
+            'edit'   => Pages\EditCertificate::route('/{record}/edit'),
         ];
     }
 

@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CoursePriceResource\Pages;
-use App\Filament\Resources\CoursePriceResource\RelationManagers;
 use App\Models\CoursePrice;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -91,9 +92,9 @@ class CoursePriceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCoursePrices::route('/'),
+            'index'  => Pages\ListCoursePrices::route('/'),
             'create' => Pages\CreateCoursePrice::route('/create'),
-            'edit' => Pages\EditCoursePrice::route('/{record}/edit'),
+            'edit'   => Pages\EditCoursePrice::route('/{record}/edit'),
         ];
     }
 

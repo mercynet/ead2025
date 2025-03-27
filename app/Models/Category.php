@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,7 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that should be cast to native types.
@@ -18,12 +21,12 @@ class Category extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'country_id' => 'integer',
-        'name' => 'array',
+        'id'          => 'integer',
+        'country_id'  => 'integer',
+        'name'        => 'array',
         'description' => 'array',
-        'parent_id' => 'integer',
-        'is_active' => 'boolean',
+        'parent_id'   => 'integer',
+        'is_active'   => 'boolean',
     ];
 
     public function country(): BelongsTo

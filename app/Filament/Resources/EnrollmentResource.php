@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\EnrollmentResource\Pages;
-use App\Filament\Resources\EnrollmentResource\RelationManagers;
 use App\Models\Enrollment;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -101,9 +102,9 @@ class EnrollmentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEnrollments::route('/'),
+            'index'  => Pages\ListEnrollments::route('/'),
             'create' => Pages\CreateEnrollment::route('/create'),
-            'edit' => Pages\EditEnrollment::route('/{record}/edit'),
+            'edit'   => Pages\EditEnrollment::route('/{record}/edit'),
         ];
     }
 

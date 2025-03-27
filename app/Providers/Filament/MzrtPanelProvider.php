@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Providers\Filament;
 
 use Filament\Http\Middleware\Authenticate;
@@ -31,9 +33,9 @@ class MzrtPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Red,
-                'danger' => Color::Red,
-                'gray' => Color::Slate,
-                'info' => Color::Blue,
+                'danger'  => Color::Red,
+                'gray'    => Color::Slate,
+                'info'    => Color::Blue,
                 'success' => Color::Emerald,
                 'warning' => Color::Amber,
             ])
@@ -66,6 +68,6 @@ class MzrtPanelProvider extends PanelProvider
     public function register(): void
     {
         parent::register();
-        FilamentView::registerRenderHook('panels:body.end', fn() => Blade::render('@vite(\'resources/js/app.js\')'));
+        FilamentView::registerRenderHook('panels:body.end', fn () => Blade::render('@vite(\'resources/js/app.js\')'));
     }
 }

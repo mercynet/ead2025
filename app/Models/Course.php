@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +13,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that should be cast to native types.
@@ -19,19 +22,19 @@ class Course extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'instructor_id' => 'integer',
-        'title' => 'array',
-        'description' => 'array',
+        'id'                => 'integer',
+        'instructor_id'     => 'integer',
+        'title'             => 'array',
+        'description'       => 'array',
         'short_description' => 'array',
-        'pre_requisites' => 'array',
-        'target_audience' => 'array',
-        'meta_title' => 'array',
-        'meta_description' => 'array',
-        'is_fifo' => 'boolean',
-        'published_at' => 'timestamp',
-        'started_at' => 'timestamp',
-        'finished_at' => 'timestamp',
+        'pre_requisites'    => 'array',
+        'target_audience'   => 'array',
+        'meta_title'        => 'array',
+        'meta_description'  => 'array',
+        'is_fifo'           => 'boolean',
+        'published_at'      => 'timestamp',
+        'started_at'        => 'timestamp',
+        'finished_at'       => 'timestamp',
     ];
 
     public function instructor(): BelongsTo

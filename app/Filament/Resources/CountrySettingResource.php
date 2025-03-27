@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CountrySettingResource\Pages;
-use App\Filament\Resources\CountrySettingResource\RelationManagers;
 use App\Models\CountrySetting;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -81,9 +82,9 @@ class CountrySettingResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCountrySettings::route('/'),
+            'index'  => Pages\ListCountrySettings::route('/'),
             'create' => Pages\CreateCountrySetting::route('/create'),
-            'edit' => Pages\EditCountrySetting::route('/{record}/edit'),
+            'edit'   => Pages\EditCountrySetting::route('/{record}/edit'),
         ];
     }
 

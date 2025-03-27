@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LessonProgress extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that should be cast to native types.
@@ -17,11 +20,11 @@ class LessonProgress extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        'id'            => 'integer',
         'enrollment_id' => 'integer',
-        'lesson_id' => 'integer',
-        'started_at' => 'timestamp',
-        'completed_at' => 'timestamp',
+        'lesson_id'     => 'integer',
+        'started_at'    => 'timestamp',
+        'completed_at'  => 'timestamp',
     ];
 
     public function enrollment(): BelongsTo

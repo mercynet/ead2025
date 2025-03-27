@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LessonProgressResource\Pages;
-use App\Filament\Resources\LessonProgressResource\RelationManagers;
 use App\Models\LessonProgress;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -97,9 +98,9 @@ class LessonProgressResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListLessonProgress::route('/'),
+            'index'  => Pages\ListLessonProgress::route('/'),
             'create' => Pages\CreateLessonProgress::route('/create'),
-            'edit' => Pages\EditLessonProgress::route('/{record}/edit'),
+            'edit'   => Pages\EditLessonProgress::route('/{record}/edit'),
         ];
     }
 
