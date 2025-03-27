@@ -22,7 +22,6 @@ class ModuleFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'course_id' => Course::factory(),
             'title' => '{}',
             'description' => '{}',

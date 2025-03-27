@@ -23,7 +23,6 @@ class CommissionFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'payment_id' => Payment::factory(),
             'instructor_id' => User::factory(),
             'amount' => fake()->numberBetween(-10000, 10000),

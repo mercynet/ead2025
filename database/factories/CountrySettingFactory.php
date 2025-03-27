@@ -22,7 +22,6 @@ class CountrySettingFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'country_id' => Country::factory(),
             'key' => fake()->word(),
             'value' => fake()->text(),

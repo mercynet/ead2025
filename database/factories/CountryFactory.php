@@ -21,7 +21,6 @@ class CountryFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'name' => fake()->name(),
             'code' => fake()->regexify('[A-Za-z0-9]{2}'),
             'currency_code' => fake()->regexify('[A-Za-z0-9]{3}'),

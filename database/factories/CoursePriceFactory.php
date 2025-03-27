@@ -23,7 +23,6 @@ class CoursePriceFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'course_id' => Course::factory(),
             'country_id' => Country::factory(),
             'price_amount' => fake()->numberBetween(-10000, 10000),

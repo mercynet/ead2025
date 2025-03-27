@@ -22,7 +22,6 @@ class LessonFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'module_id' => Module::factory(),
             'title' => '{}',
             'description' => '{}',

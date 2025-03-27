@@ -24,7 +24,6 @@ class EnrollmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'student_id' => User::factory(),
             'course_id' => Course::factory(),
             'status' => fake()->word(),

@@ -22,7 +22,6 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'instructor_id' => User::factory(),
             'order' => fake()->numberBetween(-10000, 10000),
             'access_months' => fake()->numberBetween(-10000, 10000),

@@ -22,7 +22,6 @@ class CertificateFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'enrollment_id' => Enrollment::factory(),
             'certificate_number' => fake()->word(),
             'issued_at' => fake()->dateTime(),

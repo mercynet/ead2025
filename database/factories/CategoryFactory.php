@@ -22,7 +22,6 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'country_id' => Country::factory(),
             'name' => '{}',
             'slug' => fake()->slug(),

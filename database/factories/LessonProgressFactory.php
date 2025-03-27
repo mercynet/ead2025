@@ -23,7 +23,6 @@ class LessonProgressFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'enrollment_id' => Enrollment::factory(),
             'lesson_id' => Lesson::factory(),
             'progress_percentage' => fake()->numberBetween(-10000, 10000),

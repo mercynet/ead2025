@@ -22,7 +22,6 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            'namespace' => fake()->word(),
             'user_id' => User::factory(),
             'amount' => fake()->numberBetween(-10000, 10000),
             'currency' => fake()->regexify('[A-Za-z0-9]{3}'),
