@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('commissions', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('payment_id')->constrained();
-            $table->foreignId('instructor_id')->constrained('users');
+            $table->foreignId('user_id')->constrained();
             $table->integer('amount');
-            $table->string('currency', 3)->default('BRL');
-            $table->string('status')->default('pending')->index();
+            $table->string('currency', 3)->default('BRL')->index();
+            $table->string('payment_method')->index();
+            $table->string('transaction_id')->nullable()->index();
+            $table->string('status')->index();
             $table->timestamp('paid_at')->nullable()->index();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('commissions');
+        Schema::dropIfExists('payments');
     }
 };

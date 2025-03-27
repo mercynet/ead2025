@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('certificates', function (Blueprint $table) {
+        Schema::create('lesson_progress', function (Blueprint $table) {
             $table->id();
             $table->foreignId('enrollment_id')->constrained();
-            $table->string('certificate_number')->unique();
-            $table->timestamp('issued_at')->index();
-            $table->string('verification_code')->unique();
+            $table->foreignId('lesson_id')->constrained();
+            $table->integer('progress_percentage')->default(0);
+            $table->string('status')->default('not_started')->index();
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('completed_at')->nullable()->index();
+            $table->unique(['enrollment_id', 'lesson_id']);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('certificates');
+        Schema::dropIfExists('lesson_progress');
     }
 };
