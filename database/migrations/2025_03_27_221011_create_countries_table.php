@@ -13,17 +13,22 @@ return new class extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('code', 2)->unique(); // ISO code
-            $table->string('currency_code', 3)->nullable();
+            $table->string('namespace');
+            $table->string('name')->index();
+            $table->string('code', 2)->unique();
+            $table->string('currency_code', 3)->nullable()->index();
             $table->string('currency_symbol', 10)->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(true)->index();
             $table->string('domain')->unique()->nullable();
-            $table->string('locale', 10)->default('en');
+            $table->string('locale', 10)->default('en')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('countries');
