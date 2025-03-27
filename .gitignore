@@ -40,3 +40,5 @@ Homestead.json
 /.vscode
 /.zed
 auth.json
+/draft.yaml
+/.blueprint
